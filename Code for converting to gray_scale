@@ -1,0 +1,16 @@
+from matplotlib import pyplot as plt
+
+import matplotlib.image as mpimg
+
+img = mpimg.imread('C:/Users/91954/Downloads/tree-736885_1280.jpg')
+
+r = img[..., 0]
+g = img[..., 1]
+b = img[..., 2]
+
+plt.imshow(img)
+plt.savefig('original.jpg')
+
+imgGray = 0.2989 * r + 0.5870 * g + 0.1140 * b
+plt.imshow(imgGray, cmap='gray')
+plt.savefig('gray_scale.jpg')
